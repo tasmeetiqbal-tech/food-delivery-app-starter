@@ -384,7 +384,7 @@
         holder.appendChild(table(["Name", "Area", "Cuisine", "Type", "Status", "KAM", "Commission", "Signed on"], slice.map(function (r) {
           return el("tr", { "class": "is-click", "data-testid": "kam-row", onclick: function () { go("#/restaurant/" + encodeURIComponent(r.id)); } }, [
             td(el("b", { text: r.name })), td(r.area), td(cap(r.cuisine)), td(cap(r.type)), td(pill(r.status)), td(r.kam_id),
-            td((saved("commission", {})[r.id] != null ? saved("commission", {})[r.id] : (r.c_system != null ? r.c_system : 22)) + "%", "kam-mono"),
+            td((saved("commission", {})[r.id] != null ? saved("commission", {})[r.id] : (r.c_system != null ? r.c_system : 20)) + "%", "kam-mono"),
             td(D.fmtDate(r.signed_on))
           ]);
         }), { tid: "kam-list" }));
@@ -404,7 +404,7 @@
       }
       var commissions = saved("commission", {});
       var notes = saved("notes", {});
-      var commissionVal = commissions[r.id] != null ? commissions[r.id] : (r.c_system != null ? r.c_system : 22);
+      var commissionVal = commissions[r.id] != null ? commissions[r.id] : (r.c_system != null ? r.c_system : 20);
       var notesVal = notes[r.id] != null ? notes[r.id] : defaultNotes(r);
 
       main.appendChild(el("div", { "class": "kam-crumb" }, [link("Restaurants", function () { go("#/restaurants"); }), " / " + r.name]));

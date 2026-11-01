@@ -86,7 +86,7 @@
       area: pick(x, ["area", "city"], ""),
       type: type || "restaurant",
       cuisine: cuisine,
-      pct: num(pick(x, ["commission_pct_system", "commission_pct"], 22), 22)
+      pct: num(pick(x, ["commission_pct_system", "commission_pct"], 20), 20)
     };
   }
 
